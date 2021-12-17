@@ -33,5 +33,3 @@
 	int Person::getHeight() { return this->height; }
 	String^ Person::getColorOfEyes() { return this->colorOfEyes; }
 	String^ Person::getColorOfHair() { return this->colorOfHair; }
-
-

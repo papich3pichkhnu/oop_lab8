@@ -10,5 +10,11 @@
 // add headers that you want to pre-compile here
 #include "Person.h"
 #include "Student.h"
-
+#include "Lecturer.h"
+#include "Department.h"
+#include "Discipline.h"
+#include "Faculty.h"
+#include "SeniorLecturer.h"
+#include "AssociateProfessor.h"
+#include "Exam.h"
 #endif //PCH_H

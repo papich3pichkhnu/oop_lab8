@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -82,7 +82,7 @@
     <Link>
       <AdditionalDependencies />
       <EntryPointSymbol>main</EntryPointSymbol>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -102,7 +102,7 @@
     <Link>
       <AdditionalDependencies />
       <EntryPointSymbol>main</EntryPointSymbol>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -115,6 +115,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -122,13 +125,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DBContext.h" />
+    <ClInclude Include="Departments.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Disciplines.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ExamsForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Faculties.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Lecturers.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Main.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Students.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Departments.resx">
+      <DependentUpon>Departments.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Disciplines.resx">
+      <DependentUpon>Disciplines.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faculties.resx">
+      <DependentUpon>Faculties.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lecturers.resx">
+      <DependentUpon>Lecturers.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students.resx">
+      <DependentUpon>Students.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +174,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DBContext.cpp" />
+    <ClCompile Include="Departments.cpp" />
+    <ClCompile Include="Disciplines.cpp" />
+    <ClCompile Include="ExamsForm.cpp" />
+    <ClCompile Include="Faculties.cpp" />
+    <ClCompile Include="Lecturers.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Students.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
