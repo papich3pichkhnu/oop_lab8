@@ -559,6 +559,7 @@ private: System::Void t_save_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		Student^ f = gcnew Student(t_ln->Text, t_fn->Text, t_mn->Text, int::Parse(t_a->Text), int::Parse(t_h->Text), t_coe->Text, t_coh->Text);
 		db->faculties[this->t_fac->SelectedIndex]->enrollStudent(f);
+		
 		db->students->Add(f);
 		materialListView1->Items->Add((gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(10) {
 			L"",
@@ -602,7 +603,7 @@ private: System::Void materialListView1_ItemActivate(System::Object^ sender, Sys
 	t_fac->SelectedIndex = curstud->getFacultyId() == -1 ? -1 : curstud->getFacultyId();
 }
 private: System::Void Students_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-	db->saveChanges();
+	db->saveChanges();	
 	delete db;
 	this->main->Show();
 }

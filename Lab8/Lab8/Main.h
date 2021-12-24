@@ -94,7 +94,7 @@ namespace Lab8 {
 	protected:
 
 	protected:
-
+	public: Faculty^ faculty;
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -304,9 +304,11 @@ private: System::Void btn_faculties_Click(System::Object^ sender, System::EventA
 	this->Hide();
 }
 private: System::Void btn_students_Click(System::Object^ sender, System::EventArgs^ e) {
-	Students^ st = gcnew Students(this);
+	/*Students^ st = gcnew Students(this);
 	st->Show();
-	this->Hide();
+	this->Hide();*/
+	Students^ st = gcnew Students(this);
+	st->ShowDialog();
 }
 private: System::Void btn_departments_Click(System::Object^ sender, System::EventArgs^ e) {
 	Departments^ dep = gcnew Departments(this);

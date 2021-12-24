@@ -24,7 +24,7 @@ namespace Lab8 {
 			MaterialSkinManager^ materialSkinManager = MaterialSkinManager::Instance;
 			materialSkinManager->AddFormToManage(this);
 			materialSkinManager->Theme = MaterialSkinManager::Themes::LIGHT;
-			db = gcnew DBContext();
+			db = gcnew DBContext();			
 			for each (Faculty ^ f in db->faculties)
 			{
 				materialListView1->Items->Add((gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(9) {
@@ -67,6 +67,14 @@ namespace Lab8 {
 	private: MaterialSkin::Controls::MaterialFlatButton^ b_new;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ t_save;
 
+
+
+
+
+
+
+
+
 	private: DBContext^ db;
 	protected:
 		/// <summary>
@@ -95,7 +103,6 @@ namespace Lab8 {
 	private: System::Windows::Forms::ColumnHeader^ columnHeader9;
 	private: System::Windows::Forms::ColumnHeader^ columnHeader8;
 	private: Faculty^ curfac;
-
 
 
 
@@ -160,7 +167,7 @@ namespace Lab8 {
 			this->materialListView1->FullRowSelect = true;
 			this->materialListView1->HeaderStyle = System::Windows::Forms::ColumnHeaderStyle::Nonclickable;
 			this->materialListView1->HideSelection = false;
-			this->materialListView1->Location = System::Drawing::Point(41, 244);
+			this->materialListView1->Location = System::Drawing::Point(51, 241);
 			this->materialListView1->MouseLocation = System::Drawing::Point(-1, -1);
 			this->materialListView1->MouseState = MaterialSkin::MouseState::OUT;
 			this->materialListView1->Name = L"materialListView1";
@@ -538,6 +545,7 @@ private: System::Void t_save_Click(System::Object^ sender, System::EventArgs^ e)
 				f->id.ToString(), t_name->Text, t_abbr->Text, t_dec->Text, t_yr->Text, t_nc->Text, t_tel->Text, t_email->Text
 		}, -1, System::Drawing::Color::Empty,
 			System::Drawing::Color::Transparent, nullptr)));
+		
 	}
 	else
 	{
